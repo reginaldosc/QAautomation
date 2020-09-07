@@ -18,10 +18,22 @@ search results contains relavant location
     Search.Search Results
 
 user fill the contact form
+    Home.Click Contact
+    Contact.Verify Page Loaded
+    Contact.Fill Message
+    Contact.Fill Full Name
+    Contact.Fill Email
+    Contact.Mark Checkbox
 
 user send the contact form
+    Contact.Submit
 
-user receive a success message
+user receive a contact success message
+    Contact.Wait Message
 
 user subscribe to the newsletter
+    Home.Fill Email
+    Home.Click InspireMe
 
+user receive a checkedin success message
+    Home.Verify Checkedin Message

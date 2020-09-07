@@ -7,6 +7,7 @@ Library    SeleniumLibrary
 *** Keywords ***
 Begin Web Test
     Open Browser  about:blank  chrome
+    maximize browser window
 
 End Web Test
     Close Browser
