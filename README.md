@@ -11,3 +11,6 @@ Please cover 3 of the following scenarios:
 - **Subscribe to the Newsletter**
 - Navigate to a destination through the menu on the top left
 - Verify that the links in homepage are working
+
+
+**Command to run the test cases:** ..\QAautomation>robot -d results -N "Regression" tests
