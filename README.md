@@ -14,3 +14,4 @@ Please cover 3 of the following scenarios:
 
 
 **Command to run the test cases:** ..\QAautomation>robot -d results -N "Regression" tests
+**If you want to run it using another browser:** robot -d results -v BROWSER:ff -i "TC1" tests

@@ -4,6 +4,9 @@ Resource  ../Resources/PO/Contact.robot
 Resource  ../Resources/PO/Search.robot
 
 
+*** Variables ***
+
+
 *** Keywords ***
 user is in magazine page
     Home.Load
@@ -17,7 +20,7 @@ user searches for location
 search results contains relavant location
     Search.Search Results
 
-user fill the contact form
+user prepare the contact form
     Home.Click Contact
     Contact.Verify Page Loaded
     Contact.Fill Message

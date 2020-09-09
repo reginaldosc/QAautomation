@@ -1,15 +1,19 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library    SeleniumLibrary
 
 *** Variables ***
-
+${SEARCH_SEARCH_INPUT} =    class=search-input
+${LOCATION} =               Berlin
+${ENTER_KEY} =              Enter
+${SEARCH_CARD} =            class=article-card
 
 *** Keywords ***
 Fill Search Input
-    input text    class=search-input    Berlin
+    input text    ${SEARCH_SEARCH_INPUT}     ${LOCATION}
 
 Submit Search
-    press key    class=search-input   Enter
+    press key     ${SEARCH_SEARCH_INPUT}     ${ENTER_KEY}
 
 Search Results
-    wait until page contains element    class=article-card
+    wait until page contains element     ${SEARCH_CARD}
