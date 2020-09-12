@@ -25,7 +25,8 @@ Click Search Icon
     click element     ${HOME_SEARCH_ICON}
 
 Click Contact
-    go to     ${CONTACT_URL}
+    Execute JavaScript      window.scrollTo(0, document.body.scrollHeight)
+    click link      Contact
 
 Fill Email
     ${str1}=        Generate Random String  8   [LOWER]

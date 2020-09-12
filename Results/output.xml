@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.0 on win32)" generated="20200912 13:53:46.171" rpa="false">
+<suite id="s1" name="Trivago" source="C:\Users\Reginaldo\PycharmProjects\QAautomation\tests\Trivago.robot">
+<test id="s1-t1" name="TC1-Search for any location on Magazine by using the search bar">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${EMPTY_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200912 13:53:46.467" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200912 13:53:46.466" endtime="20200912 13:53:49.571"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200912 13:53:49.571" endtime="20200912 13:53:51.695"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:46.466" endtime="20200912 13:53:51.695"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${MSG} ${NUMBERS}[0]</arg>
+</arguments>
+<msg timestamp="20200912 13:53:51.695" level="INFO">Running Test Case 1</msg>
+<status status="PASS" starttime="20200912 13:53:51.695" endtime="20200912 13:53:51.695"></status>
+</kw>
+<kw name="Given user is in magazine page" library="Trivago">
+<kw name="Load" library="Home">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200912 13:53:51.695" level="INFO">Opening url 'http://room5.trivago.com'</msg>
+<status status="PASS" starttime="20200912 13:53:51.695" endtime="20200912 13:53:54.984"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:51.695" endtime="20200912 13:53:54.985"></status>
+</kw>
+<kw name="Verify Page Loaded" library="Home">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${TITLE}</arg>
+</arguments>
+<msg timestamp="20200912 13:53:54.992" level="INFO">Page title is 'trivago Magazine'.</msg>
+<status status="PASS" starttime="20200912 13:53:54.986" endtime="20200912 13:53:54.992"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${HOME_SEARCH_BAR}</arg>
+</arguments>
+<status status="PASS" starttime="20200912 13:53:54.992" endtime="20200912 13:53:56.529"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:54.985" endtime="20200912 13:53:56.530"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:51.695" endtime="20200912 13:53:56.530"></status>
+</kw>
+<kw name="When user searches for location" library="Trivago">
+<kw name="Click Search Icon" library="Home">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOME_SEARCH_ICON}</arg>
+</arguments>
+<msg timestamp="20200912 13:53:56.535" level="INFO">Clicking element 'class=search-icon'.</msg>
+<status status="PASS" starttime="20200912 13:53:56.534" endtime="20200912 13:53:56.673"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:56.533" endtime="20200912 13:53:56.674"></status>
+</kw>
+<kw name="Fill Search Input" library="Search">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_SEARCH_INPUT}</arg>
+<arg>${LOCATION}</arg>
+</arguments>
+<msg timestamp="20200912 13:53:56.675" level="INFO">Typing text 'Berlin' into text field 'class=search-input'.</msg>
+<status status="PASS" starttime="20200912 13:53:56.674" endtime="20200912 13:53:56.838"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:56.674" endtime="20200912 13:53:56.838"></status>
+</kw>
+<kw name="Submit Search" library="Search">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${SEARCH_SEARCH_INPUT}</arg>
+<arg>${ENTER_KEY}</arg>
+</arguments>
+<msg timestamp="20200912 13:53:56.840" level="INFO">Sending key(s) ('Enter',) to class=search-input element.</msg>
+<msg timestamp="20200912 13:53:58.286" level="INFO">Sending keys Enter</msg>
+<status status="PASS" starttime="20200912 13:53:56.839" endtime="20200912 13:53:58.330"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:56.838" endtime="20200912 13:53:58.330"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:56.532" endtime="20200912 13:53:58.331"></status>
+</kw>
+<kw name="Then search results contains relavant location" library="Trivago">
+<kw name="Search Results" library="Search">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SEARCH_CARD}</arg>
+</arguments>
+<status status="PASS" starttime="20200912 13:53:58.332" endtime="20200912 13:53:58.346"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:58.332" endtime="20200912 13:53:58.346"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:58.331" endtime="20200912 13:53:58.346"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200912 13:53:58.348" endtime="20200912 13:54:00.450"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:53:58.347" endtime="20200912 13:54:00.450"></status>
+</kw>
+<tags>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<tag>TC1</tag>
+</tags>
+<status status="PASS" starttime="20200912 13:53:46.465" endtime="20200912 13:54:00.451" critical="yes"></status>
+</test>
+<test id="s1-t2" name="TC2-Fill in the contact form and send it">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${EMPTY_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:00.456" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200912 13:54:00.456" endtime="20200912 13:54:03.562"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200912 13:54:03.562" endtime="20200912 13:54:05.679"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:00.455" endtime="20200912 13:54:05.680"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${MSG} ${NUMBERS}[1]</arg>
+</arguments>
+<msg timestamp="20200912 13:54:05.681" level="INFO">Running Test Case  </msg>
+<status status="PASS" starttime="20200912 13:54:05.680" endtime="20200912 13:54:05.681"></status>
+</kw>
+<kw name="Given user is in magazine page" library="Trivago">
+<kw name="Load" library="Home">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:05.683" level="INFO">Opening url 'http://room5.trivago.com'</msg>
+<status status="PASS" starttime="20200912 13:54:05.682" endtime="20200912 13:54:08.285"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:05.682" endtime="20200912 13:54:08.285"></status>
+</kw>
+<kw name="Verify Page Loaded" library="Home">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${TITLE}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:08.291" level="INFO">Page title is 'trivago Magazine'.</msg>
+<status status="PASS" starttime="20200912 13:54:08.286" endtime="20200912 13:54:08.292"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${HOME_SEARCH_BAR}</arg>
+</arguments>
+<status status="PASS" starttime="20200912 13:54:08.292" endtime="20200912 13:54:10.251"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:08.285" endtime="20200912 13:54:10.252"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:05.682" endtime="20200912 13:54:10.252"></status>
+</kw>
+<kw name="When user prepare the contact form" library="Trivago">
+<kw name="Click Contact" library="Home">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20200912 13:54:10.257" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200912 13:54:10.256" endtime="20200912 13:54:10.275"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Contact</arg>
+</arguments>
+<msg timestamp="20200912 13:54:10.277" level="INFO">Clicking link 'Contact'.</msg>
+<status status="PASS" starttime="20200912 13:54:10.276" endtime="20200912 13:54:10.417"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:10.255" endtime="20200912 13:54:10.417"></status>
+</kw>
+<kw name="Verify Page Loaded" library="Contact">
+<kw name="Select Window" library="SeleniumLibrary">
+<doc>DEPRECATED in SeleniumLibrary 4.0. , use `Switch Window` instead.</doc>
+<arguments>
+<arg>NEW</arg>
+</arguments>
+<status status="PASS" starttime="20200912 13:54:10.418" endtime="20200912 13:54:10.429"></status>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20200912 13:54:12.452" level="INFO">${url} = https://magazine.trivago.com/contact/</msg>
+<status status="PASS" starttime="20200912 13:54:10.429" endtime="20200912 13:54:12.452"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${CONTACT_URL}</arg>
+</arguments>
+<status status="PASS" starttime="20200912 13:54:12.453" endtime="20200912 13:54:12.454"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${CONTACT_EMAIL_ID}</arg>
+</arguments>
+<status status="PASS" starttime="20200912 13:54:12.454" endtime="20200912 13:54:12.478"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:10.418" endtime="20200912 13:54:12.478"></status>
+</kw>
+<kw name="Fill Message" library="Contact">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT_YOUR_MSG_XPATH}</arg>
+<arg>${CONTACT_MSG}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:12.480" level="INFO">Typing text 'This is a test message' into text field 'xpath=//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/textarea'.</msg>
+<status status="PASS" starttime="20200912 13:54:12.479" endtime="20200912 13:54:12.654"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:12.479" endtime="20200912 13:54:12.654"></status>
+</kw>
+<kw name="Fill Full Name" library="Contact">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT_FULL_NAME_XPATH}</arg>
+<arg>${CONTACT_NAME}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:12.656" level="INFO">Typing text 'Reginaldo Gonçalves' into text field 'xpath=//*[@id="app"]/div[3]/div/div/div[1]/div[3]/div[1]/input'.</msg>
+<status status="PASS" starttime="20200912 13:54:12.655" endtime="20200912 13:54:12.807"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:12.655" endtime="20200912 13:54:12.807"></status>
+</kw>
+<kw name="Fill Email" library="Contact">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT_EMAIL_ID}</arg>
+<arg>${CONTACT_EMAIL}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:12.808" level="INFO">Typing text 'reginaldo.gooncalves.sc@gmail.com' into text field 'id=contact-email'.</msg>
+<status status="PASS" starttime="20200912 13:54:12.808" endtime="20200912 13:54:12.981"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:12.808" endtime="20200912 13:54:12.982"></status>
+</kw>
+<kw name="Mark Checkbox" library="Contact">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT_CHECKBOX_ID}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:12.983" level="INFO">Selecting checkbox 'id=confirm'.</msg>
+<status status="PASS" starttime="20200912 13:54:12.983" endtime="20200912 13:54:13.081"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:12.982" endtime="20200912 13:54:13.081"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:10.253" endtime="20200912 13:54:13.081"></status>
+</kw>
+<kw name="And user send the contact form" library="Trivago">
+<kw name="Submit" library="Contact">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT_SUBMIT_BUTTON_CLASS}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:13.083" level="INFO">Clicking button 'class=contact-submit'.</msg>
+<status status="PASS" starttime="20200912 13:54:13.083" endtime="20200912 13:54:13.166"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:13.083" endtime="20200912 13:54:13.166"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:13.082" endtime="20200912 13:54:13.166"></status>
+</kw>
+<kw name="Then user receive a contact success message" library="Trivago">
+<kw name="Wait Message" library="Contact">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${CONTACT_MSG_CLASS}</arg>
+</arguments>
+<status status="PASS" starttime="20200912 13:54:13.169" endtime="20200912 13:54:14.898"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${CONTACT_MSG_CLASS}</arg>
+<arg>${CONTACT_OK_MSG}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:14.899" level="INFO">Verifying element 'class=feedback' contains exact text 'Message Sent Successfully!'.</msg>
+<status status="PASS" starttime="20200912 13:54:14.899" endtime="20200912 13:54:14.920"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:13.168" endtime="20200912 13:54:14.920"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:13.167" endtime="20200912 13:54:14.920"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200912 13:54:14.921" endtime="20200912 13:54:17.024"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:14.921" endtime="20200912 13:54:17.025"></status>
+</kw>
+<tags>
+<tag>Regression</tag>
+<tag>TC2</tag>
+</tags>
+<status status="PASS" starttime="20200912 13:54:00.454" endtime="20200912 13:54:17.026" critical="yes"></status>
+</test>
+<test id="s1-t3" name="TC3-Subscribe to the Newsletter">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${EMPTY_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:17.035" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200912 13:54:17.033" endtime="20200912 13:54:20.186"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200912 13:54:20.187" endtime="20200912 13:54:22.319"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:17.032" endtime="20200912 13:54:22.319"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${MSG} ${NUMBERS}[2]</arg>
+</arguments>
+<msg timestamp="20200912 13:54:22.322" level="INFO">Running Test Case 2</msg>
+<status status="PASS" starttime="20200912 13:54:22.321" endtime="20200912 13:54:22.322"></status>
+</kw>
+<kw name="Given user is in magazine page" library="Trivago">
+<kw name="Load" library="Home">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:22.326" level="INFO">Opening url 'http://room5.trivago.com'</msg>
+<status status="PASS" starttime="20200912 13:54:22.325" endtime="20200912 13:54:25.052"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:22.324" endtime="20200912 13:54:25.052"></status>
+</kw>
+<kw name="Verify Page Loaded" library="Home">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${TITLE}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:25.059" level="INFO">Page title is 'trivago Magazine'.</msg>
+<status status="PASS" starttime="20200912 13:54:25.053" endtime="20200912 13:54:25.059"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${HOME_SEARCH_BAR}</arg>
+</arguments>
+<status status="PASS" starttime="20200912 13:54:25.060" endtime="20200912 13:54:26.577"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:25.053" endtime="20200912 13:54:26.577"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:22.323" endtime="20200912 13:54:26.578"></status>
+</kw>
+<kw name="When user subscribe to the newsletter" library="Trivago">
+<kw name="Fill Email" library="Home">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+</arguments>
+<assign>
+<var>${str1}</var>
+</assign>
+<msg timestamp="20200912 13:54:26.579" level="INFO">${str1} = nmrtybkn</msg>
+<status status="PASS" starttime="20200912 13:54:26.579" endtime="20200912 13:54:26.579"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${str1}</arg>
+<arg>@gmail.com</arg>
+</arguments>
+<assign>
+<var>${str2}</var>
+</assign>
+<msg timestamp="20200912 13:54:26.580" level="INFO">${str2} = nmrtybkn@gmail.com</msg>
+<status status="PASS" starttime="20200912 13:54:26.580" endtime="20200912 13:54:26.580"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${EMAIL}</arg>
+<arg>${str2}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:26.580" level="INFO">Typing text 'nmrtybkn@gmail.com' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20200912 13:54:26.580" endtime="20200912 13:54:26.740"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:26.579" endtime="20200912 13:54:26.740"></status>
+</kw>
+<kw name="Click InspireMe" library="Home">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${INSPIRE_ME}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:26.741" level="INFO">Clicking button 'class=submit'.</msg>
+<status status="PASS" starttime="20200912 13:54:26.740" endtime="20200912 13:54:26.853"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:26.740" endtime="20200912 13:54:26.853"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:26.578" endtime="20200912 13:54:26.853"></status>
+</kw>
+<kw name="Then user receive a checkedin success message" library="Trivago">
+<kw name="Verify Checkedin Message" library="Home">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${NEWSLETTER_MSG_CLASS}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200912 13:54:26.855" endtime="20200912 13:54:28.925"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${NEWSLETTER_MSG_CLASS}</arg>
+<arg>${NEWSLETTER_OK_MSG}</arg>
+</arguments>
+<msg timestamp="20200912 13:54:28.926" level="INFO">Verifying element 'class=submitted' contains exact text 'You are now checked-in!'.</msg>
+<status status="PASS" starttime="20200912 13:54:28.925" endtime="20200912 13:54:28.946"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:26.854" endtime="20200912 13:54:28.946"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:26.854" endtime="20200912 13:54:28.946"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200912 13:54:28.948" endtime="20200912 13:54:31.045"></status>
+</kw>
+<status status="PASS" starttime="20200912 13:54:28.947" endtime="20200912 13:54:31.046"></status>
+</kw>
+<tags>
+<tag>Regression</tag>
+<tag>TC3</tag>
+</tags>
+<status status="PASS" starttime="20200912 13:54:17.030" endtime="20200912 13:54:31.047" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200912 13:53:46.173" endtime="20200912 13:54:31.053"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0">Regression</stat>
+<stat pass="1" fail="0">Smoke</stat>
+<stat pass="1" fail="0">TC1</stat>
+<stat pass="1" fail="0">TC2</stat>
+<stat pass="1" fail="0">TC3</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="Trivago">Trivago</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -13,7 +13,7 @@ Fill Search Input
     input text    ${SEARCH_SEARCH_INPUT}     ${LOCATION}
 
 Submit Search
-    press key     ${SEARCH_SEARCH_INPUT}     ${ENTER_KEY}
+    press keys     ${SEARCH_SEARCH_INPUT}     ${ENTER_KEY}
 
 Search Results
     wait until page contains element     ${SEARCH_CARD}

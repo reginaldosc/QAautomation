@@ -9,16 +9,17 @@ ${CONTACT_CHECKBOX_ID} =            id=confirm
 ${CONTACT_YOUR_MSG_XPATH} =         xpath=//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/textarea
 ${CONTACT_FULL_NAME_XPATH} =        xpath=//*[@id="app"]/div[3]/div/div/div[1]/div[3]/div[1]/input
 ${CONTACT_SUBMIT_BUTTON_CLASS} =    class=contact-submit
-${CONTACT_EMAIL} =                  reginaldo.gooncalves.sc@gmail.com
+${CONTACT_EMAIL} =                  reginaldo.goncalves.sc@gmail.com
 ${CONTACT_OK_MSG} =                 Message Sent Successfully!
 ${CONTACT_NAME} =                   Reginaldo Gonçalves
 ${CONTACT_MSG} =                    This is a test message
 
 *** Keywords ***
 Verify Page Loaded
-    ${url}=    get location
-    should be equal as strings   ${url}    ${CONTACT_URL}
-    wait until page contains element    ${CONTACT_EMAIL_ID}
+    select window                           NEW
+    ${url}=                                 get location
+    should be equal as strings              ${url}    ${CONTACT_URL}
+    wait until page contains element        ${CONTACT_EMAIL_ID}
 
 Fill Message
     input text    ${CONTACT_YOUR_MSG_XPATH}     ${CONTACT_MSG}

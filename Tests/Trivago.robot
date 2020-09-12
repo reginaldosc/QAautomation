@@ -11,6 +11,8 @@ ${START_URL} =    http://room5.trivago.com
 ${NUMBERS} =      1    2    3
 ${MSG} =          Running Test Case
 
+# robot -d results tests/Trivago.robot
+
 *** Test Cases ***
 TC1-Search for any location on Magazine by using the search bar
     [Tags]    Regression    Smoke   TC1
